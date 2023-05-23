@@ -14,10 +14,3 @@ class Teacher < Person
 end
 
 teacher = Teacher.new(1, 'Belden Mugauri', 23, parent_permission: true, specialization: 'React')
-
-puts teacher.name
-puts teacher.id
-puts teacher.parent_permission
-puts teacher.age
-puts teacher.specialization
-puts teacher.can_use_service?

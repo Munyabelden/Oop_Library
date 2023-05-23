@@ -14,10 +14,3 @@ class Student < Person
 end
 
 student = Student.new(1, 'Belden Mugauri', 23, parent_permission: true, classroom: 'Class E')
-
-puts student.name
-puts student.id
-puts student.parent_permission
-puts student.age
-puts student.classroom
-puts student.play_hooky
