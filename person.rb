@@ -1,5 +1,5 @@
 class Person
-  def initialize(id, name = "unknown", age, parent_permission = true)
+  def initialize(id, name = "unknown", age, parent_permission: true)
     @id = id
     @name = name
     @age = age
@@ -38,3 +38,10 @@ class Person
     age >= 18 || parent_permission == true
   end
 end
+
+person = Person.new(1, "Belden Mugauri", 23, parent_permission: true)
+
+puts person.id
+puts person.name
+puts person.age
+puts person.can_use_service?
