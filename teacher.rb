@@ -1,10 +1,9 @@
-require_relative 'person.rb'
+require_relative 'person'
 
 class Teacher < Person
-  attr_reader :parent_permission
-  attr_reader :specialization
+  attr_reader :parent_permission, :specialization
 
-  def initialize(id, name = "unknown", age,  specialization: nil, parent_permission: true)
+  def initialize(id, age, name = 'unknown', specialization: nil, parent_permission: true)
     super(id, name, age, parent_permission: parent_permission)
     @specialization = specialization
   end
@@ -14,7 +13,7 @@ class Teacher < Person
   end
 end
 
-teacher = Teacher.new(1, "Belden Mugauri", 23, parent_permission: true, specialization: "React")
+teacher = Teacher.new(1, 'Belden Mugauri', 23, parent_permission: true, specialization: 'React')
 
 puts teacher.name
 puts teacher.id
