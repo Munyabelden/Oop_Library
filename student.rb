@@ -12,5 +12,3 @@ class Student < Person
     '¯\\(ツ)/¯'
   end
 end
-
-student = Student.new(1, 'Belden Mugauri', 23, parent_permission: true, classroom: 'Class E')

@@ -12,5 +12,3 @@ class Teacher < Person
     true
   end
 end
-
-teacher = Teacher.new(1, 'Belden Mugauri', 23, parent_permission: true, specialization: 'React')
