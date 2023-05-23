@@ -28,4 +28,3 @@ puts person.id
 puts person.name
 puts person.age
 puts person.can_use_service?
-  
