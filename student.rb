@@ -11,6 +11,7 @@ class Student < Person
 
   def classroom=(classroom)
     return if @classroom == classroom
+
     @classroom&.students&.delete(self)
     @classroom = classroom
     classroom.students << self
