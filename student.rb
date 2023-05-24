@@ -9,9 +9,7 @@ class Student < Person
   end
 
   def classroom=(classroom)
-    if @classroom
-      @classroom.students.delete(self)
-    end
+    @classroom&.students&.delete(self)
     @classroom = classroom
     classroom.students << self if classroom
   end

@@ -5,7 +5,6 @@ require_relative 'book'
 require_relative 'Rental'
 require 'date'
 
-
 class Person < Nameable
   def initialize(age, name = 'unknown', parent_permission: true)
     super()
