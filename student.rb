@@ -1,4 +1,5 @@
 require_relative 'person'
+require_relative 'classroom'
 
 class Student < Person
   attr_reader :classroom, :parent_permission
@@ -9,9 +10,10 @@ class Student < Person
   end
 
   def classroom=(classroom)
+    return if @classroom == classroom
     @classroom&.students&.delete(self)
     @classroom = classroom
-    classroom.students << self if classroom
+    classroom.students << self
   end
 
   def play_hooky
