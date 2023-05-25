@@ -97,28 +97,38 @@ class App
     elsif @books.empty?
       puts 'Book not found'
     else
-      puts 'Select a book from the following list by number'
-      @books.each_with_index do |book, index|
-        puts "#{index}) Title: #{book.title} Author: #{book.author}"
-      end
-      print('Book number: ')
-      book_choice = gets.chomp.to_i
-  
-      puts 'Select a person from the list below by number'
-      @people.each_with_index do |person, index|
-        puts "#{index}) Name: #{person.correct_name} Id: #{person.id} Age: #{person.age}"
-      end
-      print('Person number: ')
-      person_choice = gets.chomp.to_i
-  
-      print('Date: ')
-      date = gets.chomp
-  
+      display_book_list
+      book_choice = get_request('Book number: ', :to_i)
+
+      display_person_list
+      person_choice = get_request('Person number: ', :to_i)
+
+      date = get_request('Date: ')
+
       rent_book(date, @books[book_choice], @people[person_choice - 1])
       puts 'Rental created successfully'
     end
   end
-  
+
+  def display_book_list
+    puts 'Select a book from the following list by number'
+    @books.each_with_index do |book, index|
+      puts "#{index}) Title: #{book.title} Author: #{book.author}"
+    end
+  end
+
+  def display_person_list
+    puts 'Select a person from the list below by number'
+    @people.each_with_index do |person, index|
+      puts "#{index}) Name: #{person.correct_name} Id: #{person.id} Age: #{person.age}"
+    end
+  end
+
+  def get_request(prompt, conversion = :to_s)
+    print prompt
+    gets.chomp.send(conversion)
+  end
+
   def rent_book(date, book, person)
     rental = Rental.new(date, book, person)
     @rentals << rental

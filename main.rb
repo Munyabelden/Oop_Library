@@ -6,7 +6,6 @@ class Main
   end
 
   def list_options
-    puts 'Welcome, choose an option below:\n'
     actions = [
       '1 - List all books',
       '2 - List all people',
@@ -18,7 +17,7 @@ class Main
     ]
     puts actions
   end
-
+  puts 'Welcome, choose an option below:\n'
   def get_request(message, input_type = :to_s)
     print message
     input = gets.chomp
@@ -44,37 +43,34 @@ class Main
         list_rentals_for_person
       when 7
         break
-      else
-        puts 'Invalid choice, please try again'
       end
     end
   end
-  
+
   def list_books
     @app.list_books
   end
-  
+
   def list_people
     @app.list_people
   end
-  
+
   def create_person
     @app.create_person
   end
-  
+
   def create_book
     @app.create_book
   end
-  
+
   def create_rental
     @app.create_rental
   end
-  
+
   def list_rentals_for_person
     person_id = get_request('Enter person ID: ', :to_i)
     @app.list_rentals(person_id)
   end
-  
 end
 
 main_app = Main.new
