@@ -71,6 +71,15 @@ Clone this link to your local mechine
 git clone https://github.com/Munyabelden/Oop_Library.git
 ```
 
+### Usage
+
+To run the project, execute the following command:
+
+```
+  bundle install
+  ruby main.rb
+```
+
 ### Install
 
 Install this project with:
