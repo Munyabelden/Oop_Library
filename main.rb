@@ -31,18 +31,17 @@ class Main
       choice = get_request('Enter your choice: ', :to_i)
       case choice
       when 1
-        @app.list_books
+        list_books
       when 2
-        @app.list_people
+        list_people
       when 3
-        @app.create_person
+        create_person
       when 4
-        @app.create_book
+        create_book
       when 5
-        @app.create_rental
+        create_rental
       when 6
-        person_id = get_request('Enter person ID: ', :to_i)
-        @app.list_rentals(person_id)
+        list_rentals_for_person
       when 7
         break
       else
@@ -50,6 +49,32 @@ class Main
       end
     end
   end
+  
+  def list_books
+    @app.list_books
+  end
+  
+  def list_people
+    @app.list_people
+  end
+  
+  def create_person
+    @app.create_person
+  end
+  
+  def create_book
+    @app.create_book
+  end
+  
+  def create_rental
+    @app.create_rental
+  end
+  
+  def list_rentals_for_person
+    person_id = get_request('Enter person ID: ', :to_i)
+    @app.list_rentals(person_id)
+  end
+  
 end
 
 main_app = Main.new

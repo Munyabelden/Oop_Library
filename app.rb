@@ -99,27 +99,33 @@ class App
     else
       puts 'Select a book from the following list by number'
       @books.each_with_index do |book, index|
-        puts "#{index})Title: #{book.title} Author: #{book.author}"
+        puts "#{index}) Title: #{book.title} Author: #{book.author}"
       end
       print('Book number: ')
       book_choice = gets.chomp.to_i
-      puts 'Select person by number not ID from the list below'
+  
+      puts 'Select a person from the list below by number'
       @people.each_with_index do |person, index|
         puts "#{index}) Name: #{person.correct_name} Id: #{person.id} Age: #{person.age}"
       end
       print('Person number: ')
-      person_number = gets.chomp.to_i
+      person_choice = gets.chomp.to_i
+  
       print('Date: ')
-      date = gets.chomp.to_s
-      rental = Rental.new(date, @books[book_choice], @people[person_number])
-      @rentals << rental
+      date = gets.chomp
+  
+      rent_book(date, @books[book_choice], @people[person_choice - 1])
       puts 'Rental created successfully'
     end
   end
+  
+  def rent_book(date, book, person)
+    rental = Rental.new(date, book, person)
+    @rentals << rental
+  end  
 
   def list_rentals(person_id)
     person = @people.find { |p| p.id == person_id }
-
     if person.nil?
       puts 'Person not found'
     else
