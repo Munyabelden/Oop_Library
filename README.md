@@ -35,7 +35,7 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">Ruby</a></li>
+    <li><a href="https://rubygems.org">Ruby</a></li>
   </ul>
 </details>
 
@@ -67,13 +67,18 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 Clone this link to your local mechine
-`https://github.com/Munyabelden/Oop_Library.git`
+```
+git clone https://github.com/Munyabelden/Oop_Library.git
+```
 
 ### Install
 
 Install this project with:
 
-`sudo install ruby`
+```
+cd Oop_Library
+sudo install ruby
+```
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
