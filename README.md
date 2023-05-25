@@ -60,6 +60,7 @@ In order to run this project you need:
 
 - [ ] Ruby 
 - [ ] Code editor
+- [ ] Ruby Gem
 
 ### Setup
 
