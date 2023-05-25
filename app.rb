@@ -132,7 +132,7 @@ class App
   def rent_book(date, book, person)
     rental = Rental.new(date, book, person)
     @rentals << rental
-  end  
+  end
 
   def list_rentals(person_id)
     person = @people.find { |p| p.id == person_id }

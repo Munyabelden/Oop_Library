@@ -28,22 +28,32 @@ class Main
     loop do
       list_options
       choice = get_request('Enter your choice: ', :to_i)
+
       case choice
-      when 1
-        list_books
-      when 2
-        list_people
-      when 3
-        create_person
-      when 4
-        create_book
-      when 5
-        create_rental
-      when 6
-        list_rentals_for_person
+      when 1..6
+        execute_action(choice)
       when 7
         break
+      else
+        puts 'Invalid choice, please try again'
       end
+    end
+  end
+
+  def execute_action(choice)
+    case choice
+    when 1
+      list_books
+    when 2
+      list_people
+    when 3
+      create_person
+    when 4
+      create_book
+    when 5
+      create_rental
+    when 6
+      list_rentals_for_person
     end
   end
 
