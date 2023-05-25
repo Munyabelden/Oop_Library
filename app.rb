@@ -103,7 +103,7 @@ class App
       display_person_list
       person_choice = get_request('Person number: ', :to_i)
 
-      date = get_request('Date: ')
+      date = get_request('Date [YYYY-MM-DD || YYYY/MM/DD]: ')
 
       rent_book(date, @books[book_choice], @people[person_choice - 1])
       puts 'Rental created successfully'
