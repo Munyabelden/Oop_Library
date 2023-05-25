@@ -8,19 +8,19 @@ class Main
   def list_options
     puts "Welcome, choose an option below:\n"
     actions = [
-      "1 - List all books"
-      "2 - List all people"
-      "3 - Create a person"
-      "4 - Craete a book"
-      "5 - Rent a book"
-      "6 - List all rentals for a given person id"
+      "1 - List all books",
+      "2 - List all people",
+      "3 - Create a person",
+      "4 - Create a book",
+      "5 - Create a rental",
+      "6 - List all rentals for a given person id",
       "7 - Exit"
     ]
     puts actions
   end
 
   def get_request(message, input_type = :to_s)
-    puts message
+    print message
     input = gets.chomp
     input_type == :to_i ? input.to_i : input 
   end
@@ -28,7 +28,7 @@ class Main
   def main
     loop do
       list_options
-      choice = get_request("Enter your choice:", :to_i)
+      choice = get_request("Enter your choice: ", :to_i)
 
       case choice
       when 1
@@ -42,7 +42,7 @@ class Main
       when 5 
         @app.create_rental
       when 6
-        person_id = get_request("Enter person ID:", :to_i)
+        person_id = get_request("Enter person ID: ", :to_i)
         @app.list_rentals(person_id)
       when 7
         break

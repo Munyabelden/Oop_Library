@@ -1,3 +1,10 @@
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'rental'
+require_relative 'book'
+require_relative 'classroom'
+require_relative 'person'
+
 class App
   attr_accessor :books, :people, :rentals
 
@@ -35,40 +42,40 @@ class App
 
     case type
     when 1
-      puts 'Age:'
+      print 'Age: '
       age = gets.chomp.to_i
-      puts 'Name:'
+      print 'Name: '
       name = gets.chomp
-      puts 'Does the student have permission? [true/false]:'
+      print 'Does the student have permission? [true/false]: '
       parent_permission = gets.chomp.downcase == 'true'
-      puts "Enter student's classroom (optional):"
+      print "Enter student's classroom (optional): "
       classroom = gets.chomp
-
-      student = Student.new(generate_person_id, name, age, parent_permission, classroom)
+      class_name = Classroom.new(classroom)
+      student = Student.new(age, name, parent_permission: parent_permission, classroom: class_name)
       @people << student
-      puts "#{student.correct_name} has been successfully added"
+      puts "Student has been successfully created"
     when 2
-      puts 'Age:'
+      print 'Age: '
       age = gets.chomp.to_i
-      puts 'Name:'
+      print 'Name: '
       name = gets.chomp
-      puts 'Does the teacher have permission? [true/false]:'
+      print 'Does the teacher have permission? [true/false]: '
       parent_permission = gets.chomp.downcase == 'true'
-      puts "Enter teacher's specialization (optional):"
+      print "Enter teacher's specialization (optional): "
       specialization = gets.chomp
 
-      teacher = Teacher.new(generate_person_id, name, age, parent_permission, specialization)
+      teacher = Teacher.new(age, name, parent_permission: parent_permission, specialization: specialization)
       @people << teacher
-      puts "Teacher #{teacher.correct_name} has been added successfully"
+      puts "Teacher has been created successfully"
     else
       puts "Invalid person type, please choose either student (1) or teacher (2)."
     end
   end
 
   def create_book
-    puts 'Enter book title:'
+    print 'Enter book title: '
     title = gets.chomp
-    puts 'Enter author\'s name:'
+    print 'Enter author\'s name: '
     author = gets.chomp
 
     new_book = Book.new(title, author)
@@ -77,24 +84,31 @@ class App
   end
 
   def create_rental
-    puts "Enter person ID:"
-    person_id = gets.chomp.to_i
-    puts "Enter book title:"
-    book_title = gets.chomp
-    puts "Enter rental date:"
-    date = gets.chomp
-
-    person = @people.find { |p| p.id == person_id }
-    book = @books.find { |b| b.title == book_title }
-
-    if person.nil?
+    if @people.empty?
       puts "Person not found"
-    elsif book.nil?
+    elsif @books.empty?
       puts "Book not found"
     else
-      rental = Rental.new(person, book, date)
+      puts "Select a book from the following list by number"
+      @books.each_with_index do |book, index|
+        puts "#{index})Title: #{book.title} Author: #{book.author}"
+      end
+
+      print("Book number: ")
+      book_choice = gets.chomp.to_i
+
+      puts "Select person by number not ID from the list below"
+      @people.each_with_index do |person, index|
+        puts "#{index}) Name: #{person.correct_name} Id: #{person.id} Age: #{person.age}"
+      end
+
+      print("Person number: ")
+      person_number = gets.chomp.to_i
+      print("Date: ")
+      date = gets.chomp.to_s
+      rental = Rental.new(date, @books[book_choice], @people[person_number]) 
       @rentals << rental
-      puts "Rental created. Person: #{person.correct_name}, Book: #{book.title}, Date: #{rental.date}"
+      puts "Rental created successfully"
     end
   end
 
