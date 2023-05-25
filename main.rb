@@ -22,14 +22,13 @@ class Main
   def get_request(message, input_type = :to_s)
     print message
     input = gets.chomp
-    input_type == :to_i ? input.to_i : input 
+    input_type == :to_i ? input.to_i : input
   end
 
   def main
     loop do
       list_options
       choice = get_request('Enter your choice: ', :to_i)
-
       case choice
       when 1
         @app.list_books
@@ -39,7 +38,7 @@ class Main
         @app.create_person
       when 4
         @app.create_book
-      when 5 
+      when 5
         @app.create_rental
       when 6
         person_id = get_request('Enter person ID: ', :to_i)

@@ -63,7 +63,7 @@ class App
     teacher = Teacher.new(age, name, parent_permission: parent_permission, specialization: specialization)
     @people << teacher
   end
-  
+
   def create_person
     puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     type = gets.chomp.to_i
@@ -88,7 +88,7 @@ class App
 
     new_book = Book.new(title, author)
     @books << new_book
-    puts 'Book #{new_book.title} has been successfully created'
+    puts "Book #{new_book.title} has been successfully created"
   end
 
   def create_rental
@@ -101,20 +101,17 @@ class App
       @books.each_with_index do |book, index|
         puts "#{index})Title: #{book.title} Author: #{book.author}"
       end
-
       print('Book number: ')
       book_choice = gets.chomp.to_i
-
       puts 'Select person by number not ID from the list below'
       @people.each_with_index do |person, index|
         puts "#{index}) Name: #{person.correct_name} Id: #{person.id} Age: #{person.age}"
       end
-
       print('Person number: ')
       person_number = gets.chomp.to_i
       print('Date: ')
       date = gets.chomp.to_s
-      rental = Rental.new(date, @books[book_choice], @people[person_number]) 
+      rental = Rental.new(date, @books[book_choice], @people[person_number])
       @rentals << rental
       puts 'Rental created successfully'
     end
