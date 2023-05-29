@@ -39,7 +39,7 @@ class App
 
   def create_student
     input = Render.new
-    age = input.get_request('Age: ', :to_i) 
+    age = input.get_request('Age: ', :to_i)
     name = input.get_request('Name: ')
     print 'Does the student have permission? [true/false]: '
     parent_permission = gets.chomp.downcase == 'true'
@@ -51,7 +51,7 @@ class App
 
   def create_teacher
     input = Render.new
-    age = input.get_request('Age: ', :to_i) 
+    age = input.get_request('Age: ', :to_i)
     name = input.get_request('Name: ')
     print 'Does the teacher have permission? [true/false]: '
     parent_permission = gets.chomp.downcase == 'true'
