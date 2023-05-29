@@ -4,6 +4,7 @@ require_relative 'rental'
 require_relative 'book'
 require_relative 'classroom'
 require_relative 'person'
+require_relative 'render'
 
 class App
   attr_accessor :books, :people, :rentals
@@ -37,28 +38,24 @@ class App
   end
 
   def create_student
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
+    input = Render.new
+    age = input.get_request('Age: ', :to_i)
+    name = input.get_request('Name: ')
     print 'Does the student have permission? [true/false]: '
     parent_permission = gets.chomp.downcase == 'true'
-    print "Enter student's classroom (optional): "
-    classroom = gets.chomp
+    classroom = input.get_request("Enter student's classroom (optional): ")
     class_name = Classroom.new(classroom)
     student = Student.new(age, name, parent_permission: parent_permission, classroom: class_name)
     @people << student
   end
 
   def create_teacher
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
+    input = Render.new
+    age = input.get_request('Age: ', :to_i)
+    name = input.get_request('Name: ')
     print 'Does the teacher have permission? [true/false]: '
     parent_permission = gets.chomp.downcase == 'true'
-    print 'Enter teacher\'s specialization (optional): '
-    specialization = gets.chomp
+    specialization = input.get_request('Enter teacher\'s specialization: ')
 
     teacher = Teacher.new(age, name, parent_permission: parent_permission, specialization: specialization)
     @people << teacher

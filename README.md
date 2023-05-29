@@ -98,6 +98,11 @@ sudo install ruby
 
 - GitHub: [@githubhandle](https://github.com/Munyabelden/)
 - Twitter: [@twitterhandle](https://twitter.com/munyaradzi045)
+
+👤 **Tracy Miranja**
+
+- GitHub: [@githubhandle](https://github.com/Tracy-miranja)
+- linkedin: [@twitterhandle](https://www.linkedin.com/in/tracy-miranja)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
