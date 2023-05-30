@@ -102,7 +102,7 @@ sudo install ruby
 👤 **Tracy Miranja**
 
 - GitHub: [@githubhandle](https://github.com/Tracy-miranja)
-- linkedin: [@twitterhandle](https://www.linkedin.com/in/tracy-miranja)
+- Linkedin: [@twitterhandle](https://www.linkedin.com/in/tracy-miranja)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>

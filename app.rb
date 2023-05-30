@@ -5,6 +5,7 @@ require_relative 'book'
 require_relative 'classroom'
 require_relative 'person'
 require_relative 'render'
+require_relative 'data'
 
 class App
   attr_accessor :books, :people, :rentals
@@ -13,6 +14,8 @@ class App
     @books = []
     @people = []
     @rentals = []
+    ensure_files_exist
+    load_data
   end
 
   def list_books
@@ -47,6 +50,7 @@ class App
     class_name = Classroom.new(classroom)
     student = Student.new(age, name, parent_permission: parent_permission, classroom: class_name)
     @people << student
+    save_data(@people, 'people.json')
   end
 
   def create_teacher
@@ -59,6 +63,7 @@ class App
 
     teacher = Teacher.new(age, name, parent_permission: parent_permission, specialization: specialization)
     @people << teacher
+    save_data(@people, 'people.json')
   end
 
   def create_person
@@ -85,6 +90,7 @@ class App
 
     new_book = Book.new(title, author)
     @books << new_book
+    save_data(@books, 'books.json')
     puts "Book #{new_book.title} has been successfully created"
   end
 
@@ -103,6 +109,7 @@ class App
       date = get_request('Date [YYYY-MM-DD || YYYY/MM/DD]: ')
 
       rent_book(date, @books[book_choice], @people[person_choice - 1])
+      save_data(@rentals, 'rentals.json')
       puts 'Rental created successfully'
     end
   end
