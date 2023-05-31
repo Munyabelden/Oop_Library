@@ -28,5 +28,4 @@ def load_data
   @people = load_data_from_file('people.json')
   @rentals = load_data_from_file('rentals.json')
 
-  puts 'Data loaded successfully'
 end
