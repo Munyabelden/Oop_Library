@@ -13,7 +13,7 @@ RSpec.describe Person do
       it 'reurns true' do
         person = Person.new(18)
         expect(person.can_use_services?).to be(true)
-      end  
+      end
     end
    
     context 'when person is under age but has parent\'s permision' do
@@ -39,7 +39,7 @@ RSpec.describe Person do
         name: 'Alice Smith',
         parent_permission: true,
         id: anything,
-        rentals: [], 
+        rentals: []
       }
       expect(person.to_h).to match(expected_hash)
     end

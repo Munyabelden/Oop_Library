@@ -8,7 +8,7 @@ RSpec.describe 'Classroom' do
 
       expect(classroom.label).to eq('Math')
     end
-    
+
     it 'should set students to empty array' do
       classroom = Classroom.new('Math')
 

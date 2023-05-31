@@ -61,6 +61,7 @@ In order to run this project you need:
 - [ ] Ruby 
 - [ ] Code editor
 - [ ] Ruby Gem
+- [ ] Rspec
 
 ### Setup
 
@@ -89,6 +90,11 @@ cd Oop_Library
 sudo install ruby
 ```
 
+### Run
+ To test this project run:
+ ```
+ rspec spec/
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
