@@ -144,9 +144,10 @@ class App
     rentals = @rentals.filter { |rental| rental['person']['id'] == person_id }
 
     rentals.each do |rental|
-      puts "Rentals for #{rental['person']['name']}: Book '#{rental['book']['title']}' by #{rental['book']['author']}, Date: #{rental['date']},"
+      puts "Rentals for #{rental['person']['name']}:"
+      puts "Book '#{rental['book']['title']}' by #{rental['book']['author']}, Date: #{rental['date']},"
     end
-   
+
   end
 
   private
