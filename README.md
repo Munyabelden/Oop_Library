@@ -41,13 +41,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Class inheritance and extention**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [ ] There is no live preview yet 
-
+- **Data presevation**
+- **Unit testing**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -113,7 +108,7 @@ sudo install ruby
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Unit testing**
+- [ ] **API server connection**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
