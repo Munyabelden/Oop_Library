@@ -93,7 +93,7 @@ sudo install ruby
 ### Run
  To test this project run:
  ```
- rspec spec/
+ rspec specs/
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
