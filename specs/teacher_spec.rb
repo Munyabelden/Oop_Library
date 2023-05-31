@@ -12,13 +12,13 @@ RSpec.describe Teacher do
 
     it 'sets parent permission to true by default' do
       teacher = Teacher.new(35, 'Jane Smith')
-      
+
       expect(teacher.parent_permission).to be(true)
     end
-  
+
     it 'sets specialization to nil by default' do
       teacher = Teacher.new(35, 'Jane Smith')
-      
+
       expect(teacher.specialization).to be_nil
     end
   end

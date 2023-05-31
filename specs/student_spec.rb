@@ -13,13 +13,13 @@ RSpec.describe Student do
 
     it 'sets parent permission to true by default' do
       student = Student.new(15, 'John Doe')
-      
+
       expect(student.parent_permission).to be(true)
     end
 
     it 'sets classroom to nil by default' do
       student = Student.new(15, 'John Doe')
-      
+
       expect(student.classroom).to be_nil
     end
   end
