@@ -11,11 +11,10 @@ class App
   attr_accessor :books, :people, :rentals
 
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
+    @books = load_data_from_file('books.json')
+    @people = load_data_from_file('people.json')
+    @rentals = load_data_from_file('rentals.json')
     ensure_files_exist
-    load_data
   end
 
   def list_books

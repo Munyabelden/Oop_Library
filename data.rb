@@ -20,9 +20,3 @@ def load_data_from_file(filename)
     []
   end
 end
-
-def load_data
-  @books = load_data_from_file('books.json')
-  @people = load_data_from_file('people.json')
-  @rentals = load_data_from_file('rentals.json')
-end
