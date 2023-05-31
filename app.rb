@@ -147,7 +147,6 @@ class App
       puts "Rentals for #{rental['person']['name']}:"
       puts "Book '#{rental['book']['title']}' by #{rental['book']['author']}, Date: #{rental['date']},"
     end
-
   end
 
   private
