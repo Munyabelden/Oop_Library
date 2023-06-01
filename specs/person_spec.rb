@@ -1,6 +1,11 @@
 require_relative '../person'
+require_relative '../book'
 
 RSpec.describe Person do
+  let(:person) { Person.new(18) }
+  let(:book) { Book.new('Title', 'Author') }
+  let(:date) { '2023-08-18' }
+
   describe '#correct_name' do
     it 'returns the correct name' do
       person = Person.new(25, 'John Doe')
@@ -28,6 +33,13 @@ RSpec.describe Person do
         person = Person.new(15, 'Grace Fieder', parent_permission: false)
         expect(person.can_use_services?).to be(false)
       end
+    end
+  end
+
+  describe '#add_rental' do
+    it 'creates a new Rental object with the specified book and date' do
+      rental = person.add_rental(book, date)
+      expect(rental).to be_instance_of Rental
     end
   end
 
