@@ -16,6 +16,8 @@ class Book
   attr_accessor :title, :author, :rentals
 
   def add_rental(person, date)
-    Rental.new(date, self, person)
+    rental = Rental.new(date, self, person)
+    @rentals << rental
+    rental
   end
 end

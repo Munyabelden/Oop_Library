@@ -6,7 +6,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -41,13 +40,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Class inheritance and extention**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [ ] There is no live preview yet 
-
+- **Data presevation**
+- **Unit testing**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -61,6 +55,7 @@ In order to run this project you need:
 - [ ] Ruby 
 - [ ] Code editor
 - [ ] Ruby Gem
+- [ ] Rspec
 
 ### Setup
 
@@ -89,6 +84,11 @@ cd Oop_Library
 sudo install ruby
 ```
 
+### Run
+ To test this project run:
+ ```
+ rspec specs/
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,7 +107,7 @@ sudo install ruby
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Unit testing**
+- [ ] **API server connection**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
